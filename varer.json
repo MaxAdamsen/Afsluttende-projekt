@@ -1,3 +1,346 @@
-{
-    "første vare": "tomat"
-}
+[
+    {
+      "name": "Spaghetti Bolognese",
+      "ingredients": [
+        "spaghetti",
+        "ground beef",
+        "onion",
+        "garlic",
+        "tomato sauce",
+        "olive oil",
+        "salt",
+        "pepper",
+        "basil"
+      ],
+      "instructions": "Cook spaghetti according to package instructions. In a separate pan, sauté onion and garlic in olive oil until translucent. Add ground beef and cook until browned. Stir in tomato sauce and basil; simmer for 15 minutes. Serve sauce over spaghetti."
+    },
+    {
+      "name": "Chicken Stir-Fry",
+      "ingredients": [
+        "chicken breast",
+        "broccoli",
+        "carrots",
+        "bell pepper",
+        "soy sauce",
+        "garlic",
+        "ginger",
+        "vegetable oil"
+      ],
+      "instructions": "Slice chicken and vegetables. Heat oil in a wok and sauté garlic and ginger. Add chicken and cook until no longer pink. Add vegetables and stir-fry until tender-crisp. Stir in soy sauce and cook for another 2 minutes. Serve hot."
+    },
+    {
+      "name": "Vegetable Omelette",
+      "ingredients": [
+        "eggs",
+        "spinach",
+        "mushrooms",
+        "tomatoes",
+        "cheddar cheese",
+        "milk",
+        "salt",
+        "pepper",
+        "butter"
+      ],
+      "instructions": "Whisk eggs, milk, salt, and pepper together. Melt butter in a skillet over medium heat. Pour in egg mixture. Add spinach, mushrooms, tomatoes, and cheese on one half. When eggs are set, fold the omelette and cook for another minute. Serve warm."
+    },
+    {
+      "name": "Fruit Smoothie",
+      "ingredients": [
+        "banana",
+        "strawberries",
+        "blueberries",
+        "yogurt",
+        "honey",
+        "ice cubes"
+      ],
+      "instructions": "Combine all ingredients in a blender. Blend until smooth. Pour into a glass and enjoy immediately."
+    },
+    {
+      "name": "Beef Tacos",
+      "ingredients": [
+        "ground beef",
+        "taco shells",
+        "lettuce",
+        "cheddar cheese",
+        "tomato",
+        "onion",
+        "taco seasoning",
+        "sour cream",
+        "salsa"
+      ],
+      "instructions": "Cook ground beef in a skillet over medium heat. Add taco seasoning and follow package instructions. Fill taco shells with beef, lettuce, cheese, tomato, and onion. Top with sour cream and salsa."
+    },
+    {
+      "name": "Grilled Cheese Sandwich",
+      "ingredients": [
+        "bread slices",
+        "cheddar cheese",
+        "butter"
+      ],
+      "instructions": "Butter one side of each bread slice. Place cheese between unbuttered sides. Cook in a skillet over medium heat until golden brown on both sides and cheese is melted."
+    },
+    {
+      "name": "Pancakes",
+      "ingredients": [
+        "flour",
+        "milk",
+        "egg",
+        "sugar",
+        "baking powder",
+        "salt",
+        "butter",
+        "maple syrup"
+      ],
+      "instructions": "Mix flour, sugar, baking powder, and salt. Add milk and egg; mix until smooth. Heat butter on a griddle. Pour batter and cook until bubbles form, then flip. Serve with maple syrup."
+    },
+    {
+      "name": "Caesar Salad",
+      "ingredients": [
+        "romaine lettuce",
+        "croutons",
+        "parmesan cheese",
+        "caesar dressing",
+        "lemon juice",
+        "black pepper"
+      ],
+      "instructions": "Chop lettuce and place in a bowl. Add croutons and parmesan cheese. Drizzle with dressing and lemon juice. Toss well and sprinkle with black pepper."
+    },
+    {
+      "name": "Tomato Soup",
+      "ingredients": [
+        "tomatoes",
+        "onion",
+        "garlic",
+        "vegetable broth",
+        "olive oil",
+        "basil",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Sauté onion and garlic in olive oil. Add chopped tomatoes and cook until soft. Add vegetable broth and basil; simmer for 20 minutes. Blend until smooth. Season with salt and pepper."
+    },
+    {
+      "name": "Chocolate Chip Cookies",
+      "ingredients": [
+        "flour",
+        "sugar",
+        "brown sugar",
+        "butter",
+        "eggs",
+        "vanilla extract",
+        "baking soda",
+        "salt",
+        "chocolate chips"
+      ],
+      "instructions": "Cream butter and sugars. Add eggs and vanilla. Mix in flour, baking soda, and salt. Stir in chocolate chips. Drop spoonfuls onto a baking sheet. Bake at 350°F for 10-12 minutes."
+    },
+    {
+      "name": "Guacamole",
+      "ingredients": [
+        "avocados",
+        "lime juice",
+        "red onion",
+        "cilantro",
+        "tomato",
+        "jalapeño",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Mash avocados in a bowl. Stir in lime juice, diced onion, chopped cilantro, diced tomato, and minced jalapeño. Season with salt and pepper."
+    },
+    {
+      "name": "Banana Bread",
+      "ingredients": [
+        "ripe bananas",
+        "flour",
+        "sugar",
+        "butter",
+        "eggs",
+        "baking soda",
+        "salt",
+        "vanilla extract"
+      ],
+      "instructions": "Mash bananas. Mix in melted butter, sugar, eggs, and vanilla. Add flour, baking soda, and salt. Pour into a loaf pan. Bake at 350°F for 50-60 minutes."
+    },
+    {
+      "name": "Margarita Pizza",
+      "ingredients": [
+        "pizza dough",
+        "tomato sauce",
+        "fresh mozzarella",
+        "basil leaves",
+        "olive oil",
+        "salt"
+      ],
+      "instructions": "Spread tomato sauce over rolled-out dough. Top with mozzarella slices and basil leaves. Drizzle with olive oil and sprinkle with salt. Bake at 475°F for 10-12 minutes."
+    },
+    {
+      "name": "Chicken Noodle Soup",
+      "ingredients": [
+        "chicken breast",
+        "egg noodles",
+        "carrots",
+        "celery",
+        "onion",
+        "chicken broth",
+        "garlic",
+        "thyme",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Cook chicken in a pot with broth until done; remove and shred. Sauté onion, garlic, carrots, and celery. Add broth, shredded chicken, thyme, salt, and pepper. Simmer and add noodles; cook until tender."
+    },
+    {
+      "name": "Greek Salad",
+      "ingredients": [
+        "cucumber",
+        "tomatoes",
+        "red onion",
+        "feta cheese",
+        "kalamata olives",
+        "olive oil",
+        "lemon juice",
+        "oregano",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Chop vegetables and combine in a bowl. Add feta and olives. Whisk olive oil, lemon juice, oregano, salt, and pepper; pour over salad and toss."
+    },
+    {
+      "name": "Shrimp Scampi",
+      "ingredients": [
+        "shrimp",
+        "garlic",
+        "butter",
+        "lemon juice",
+        "white wine",
+        "parsley",
+        "salt",
+        "pepper",
+        "angel hair pasta"
+      ],
+      "instructions": "Cook pasta according to package instructions. Sauté garlic in butter, add shrimp and cook until pink. Add lemon juice and white wine; simmer. Toss with pasta and garnish with parsley."
+    },
+    {
+      "name": "Quinoa Salad",
+      "ingredients": [
+        "quinoa",
+        "cherry tomatoes",
+        "cucumber",
+        "red onion",
+        "feta cheese",
+        "olive oil",
+        "lemon juice",
+        "mint",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Cook quinoa and let cool. Mix with chopped vegetables and feta. Whisk olive oil, lemon juice, chopped mint, salt, and pepper; pour over salad and mix."
+    },
+    {
+      "name": "Baked Salmon",
+      "ingredients": [
+        "salmon fillets",
+        "lemon slices",
+        "dill",
+        "olive oil",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Place salmon on a baking sheet. Drizzle with olive oil, and season with salt, pepper, and dill. Top with lemon slices. Bake at 375°F for 15-20 minutes."
+    },
+    {
+      "name": "French Toast",
+      "ingredients": [
+        "bread slices",
+        "eggs",
+        "milk",
+        "vanilla extract",
+        "cinnamon",
+        "butter",
+        "maple syrup"
+      ],
+      "instructions": "Whisk eggs, milk, vanilla, and cinnamon. Dip bread slices into mixture. Cook on a buttered skillet until golden brown on both sides. Serve with maple syrup."
+    },
+    {
+      "name": "Caprese Salad",
+      "ingredients": [
+        "tomatoes",
+        "fresh mozzarella",
+        "basil leaves",
+        "balsamic glaze",
+        "olive oil",
+        "salt",
+        "pepper"
+      ],
+      "instructions": "Slice tomatoes and mozzarella. Arrange on a plate alternating slices. Top with basil leaves. Drizzle with olive oil and balsamic glaze. Season with salt and pepper."
+    },
+    {
+      "name": "Stir-Fried Tofu",
+      "ingredients": [
+        "firm tofu",
+        "broccoli",
+        "bell pepper",
+        "soy sauce",
+        "garlic",
+        "ginger",
+        "sesame oil",
+        "cornstarch"
+      ],
+      "instructions": "Press and cube tofu, toss with cornstarch. Fry until crispy. Sauté garlic and ginger, add vegetables and cook until tender. Add tofu back, stir in soy sauce and sesame oil."
+    },
+    {
+      "name": "Mashed Potatoes",
+      "ingredients": [
+        "potatoes",
+        "butter",
+        "milk",
+        "salt",
+        "pepper",
+        "garlic powder"
+      ],
+      "instructions": "Boil peeled potatoes until tender. Mash with butter and milk. Season with salt, pepper, and garlic powder."
+    },
+    {
+      "name": "Chocolate Brownies",
+      "ingredients": [
+        "unsalted butter",
+        "sugar",
+        "cocoa powder",
+        "eggs",
+        "vanilla extract",
+        "flour",
+        "salt"
+      ],
+      "instructions": "Melt butter and mix in sugar and cocoa powder. Stir in eggs and vanilla. Add flour and salt. Pour into a baking pan and bake at 350°F for 25-30 minutes."
+    },
+    {
+      "name": "Egg Fried Rice",
+      "ingredients": [
+        "cooked rice",
+        "eggs",
+        "green onions",
+        "peas",
+        "carrots",
+        "soy sauce",
+        "sesame oil",
+        "garlic",
+        "vegetable oil"
+      ],
+      "instructions": "Scramble eggs and set aside. Sauté garlic in oil, add vegetables and cook until tender. Add rice and stir-fry. Mix in eggs, soy sauce, and sesame oil. Garnish with green onions."
+    },
+    {
+      "name": "Apple Pie",
+      "ingredients": [
+        "pie crust",
+        "apples",
+        "sugar",
+        "cinnamon",
+        "nutmeg",
+        "lemon juice",
+        "butter",
+        "flour"
+      ],
+      "instructions": "Slice apples and mix with sugar, spices, lemon juice, and flour. Place in pie crust, dot with butter, and cover with top crust. Bake at 425°F for 45-50 minutes."
+    }
+  ]
