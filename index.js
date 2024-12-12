@@ -67,7 +67,6 @@ function displayResults(results) {
     for (let i = 0; i < results.length; i++) {
         let recipe = results[i];
 
-
         let recipeDiv = document.createElement("div");
         recipeDiv.className = "recipe";
 
@@ -78,24 +77,23 @@ function displayResults(results) {
         '<div class="recipe-box">' + 
         '<div class="recipe-container">' + 
         '<img class="recipe-box img" src="' + recipe.image + '" alt="' + recipe.name + '">' +
-        '<br>'+
-        '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +
-        '<p class="recipe-box p">Ingredients: ' + recipe.ingredients.join(", ") + '</p>' +
-        '<button id="button'+ i +'" class="recipe-favorite-btn">Add To Favorites</button>' +
-        '</div>';
+        '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +  
+        '<button id="button'+ i +'" class="recipe-favorite-btn">'+buttontext+'</button>' +
+        '<button id="modalbutton'+ i +'" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Show Recipe</button>' +
+        '</div>'
+        '</div>'
 
         resultsDiv.appendChild(recipeDiv);
-        button = document.getElementById("button"+ i)
+        let button = document.getElementById("button" + i);
 
         if (favoritecheck) {
-            button.addEventListener("click", ((recipeCopy) => {
-                return () => removeFromFavorites(recipeCopy);
-            })(recipe));
+            button.addEventListener("click", () => removeFromFavorites(recipe));
         } else {
-            button.addEventListener("click", ((recipeCopy) => {
-                return () => addToFavorites(recipeCopy);
-            })(recipe));
+            button.addEventListener("click", () => addToFavorites(recipe));
         }
+        
+        let modalbutton = document.getElementById("modalbutton" + i);
+        modalbutton.addEventListener("click", () => modalinfo(recipe));
     }
 }
 
@@ -123,4 +121,9 @@ function displayfavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     displayResults(favorites);
+}
+
+function modalinfo(recipe){
+    let title = document.getElementById("modallabel");
+    title.innerHTML = recipe.name;
 }
