@@ -29,7 +29,7 @@ function searchswitch(data) {
     } else {
         filtered = search2(data, Words);
     }
-    console.log(JSON.stringify(filtered, null, 2));
+    displayResults(filtered)
     return filtered;
 }
 
@@ -49,4 +49,70 @@ function search2(data, words) {
         });
         return count >= 3;
     });
+}
+function displayResults(results) {
+
+    let resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = "";
+
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+
+    if (results.length === 0) {
+        resultsDiv.innerHTML = "<p>No recipes found.</p>";
+        return;
+    }
+
+
+    for (let i = 0; i < results.length; i++) {
+        let recipe = results[i];
+
+
+        let recipeDiv = document.createElement("div");
+        recipeDiv.className = "recipe";
+
+        let favoritecheck = favorites.some(favorite => favorite.name === recipe.name);
+        let buttontext = favoritecheck ? "Remove from favorites" : "Add to favorites";
+
+        recipeDiv.innerHTML =
+            '<img src="' + recipe.image + '" alt="' + recipe.name + '">' +
+            '<div>' +
+            '<h3>' + recipe.name + '</h3>' +
+            '<p>Ingredients: ' + recipe.ingredients.join(", ") + '</p>' +
+            '<button id="button' + i + '">' + buttontext + '</button>'
+        '</div>';
+
+        resultsDiv.appendChild(recipeDiv);
+        button = document.getElementById("button"+ i)
+
+        if (favoritecheck) {
+            button.addEventListener("click", ((recipeCopy) => {
+                return () => removeFromFavorites(recipeCopy);
+            })(recipe));
+        } else {
+            button.addEventListener("click", ((recipeCopy) => {
+                return () => addToFavorites(recipeCopy);
+            })(recipe));
+        }
+    }
+}
+
+function addToFavorites(recipe) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    if (favorites.some(fav => fav.name === recipe.name)) {
+        alert("This recipe is already in your favorites!");
+        return;
+    }
+
+    favorites.push(recipe);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    console.log(favorites)
+}
+
+function removeFromFavorites(recipe) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    favorites = favorites.filter(fav => fav.name !== recipe.name);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    console.log(favorites)
 }

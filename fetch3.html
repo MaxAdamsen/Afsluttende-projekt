@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let category = "Beef";
+
+        function fetchRecipesAndDetails(category) {
+            // Fetch the list of meals in the category
+            return fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
+                .then(response => response.json())
+                .then(categoryData => {
+                    // Extract meal IDs
+                    const ids = categoryData.meals.map(meal => meal.idMeal);
+
+                    // Fetch all recipes using Promise.all
+                    return Promise.all(
+                        ids.map(id => {
+                            return fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
+                                .then(response => response.json())
+                                .then(recipeData => recipeData.meals[0]);
+                        })
+                    );
+                });
+        }
+
+        // Fetch recipes and log them
+        fetchRecipesAndDetails(category)
+            .then(recipes => {
+                console.log(JSON.stringify(recipes, null, 2));
+            })
+            .catch(error => {
+                console.error("Error:", error);
+            });
+    </script>
+</body>
+</html>

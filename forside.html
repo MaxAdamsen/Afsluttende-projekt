@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forside</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="logo">TØMKØLESKABET.dk</div> 
+        <nav>
+            <ul>
+                <li><a href="Opskrifter.html">Opskrifter</a></li>    
+                <li><a href="Omos.html">Om os</a></li>
+                <li class="dropdown">
+                    <button>Mit Køleskab</button>
+                    <div class="dropdown-content">
+                        <a href="favoritter.html">Favoritter</a>
+                        <a href="#">Find opskrift</a>
+                        <a href="#">Upload dine varer</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <main>
+        <section class="hero">
+            <img src="mad.jpg">
+        </section>
+        <section class="content">
+            <h1>Velkommen til Tøm Køleskabet</h1>
+            <p>Vi ønsker at hjælpe med at mindske madspild  hjemme hos dig. Derudover elsker vi lækre og billige madopskrifter. Her kan du få hjælp til at finde opskrifter ud fra netop de råvarer, du har i dit køleskab.
+            </p>
+
+         
+        </section>
+
+        <div class="bigcontainer">
+            <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#modal1">
+                <div class="bigbox">
+                    <img src="pizzasnegle.jpg" alt="Små pizzasnegle">
+                    <h2>Små pizzasnegle - sjove og grove</h2>
+                    <p>De små lækre pizzasnegle er perfekte i madpakken eller til børnefødselsdagen...</p>
+                </div>
+            </button>
+
+        <div class="container">
+            <div class="box">
+                <a href="vodkapasta.html">
+                    <img src="vodkapasta.jpg" alt="Vodka pasta">
+                    <h2>Lækker, cremet vodka pasta</h2>
+                    <p> Den virale vodka pasta, få opskriften her</p>
+                </a>
+            </div>
+
+            <div class="box">
+                <a href="braendende-kaerlighed.html">
+                    <img src="brændkær.jpg" alt="Brændende kærlighed">
+                    <h2>Brændende kærlighed – et grønnere alternativ</h2>
+                    <p>Brændende kærlighed – et grønnere alternativ til den klassiske opskrift.</p>
+                </a>
+            </div>
+            <div class="box">
+                <a href="burritos.html">
+                    <img src="burrito.jpg" alt="Burritos med flanksteak">
+                    <h2>Burritos med flanksteak og bønemos</h2>
+                    <p>I Danmark elsker vi TexMex, og disse burritos er en virkelig nem hverdagsret.</p>
+                </a>
+            </div>
+            <div class="box">
+                <a href="Kålsalat.html">
+                    <img src="kålsalat.jpg" alt="Kålsalat med chilli">
+                    <h2>Lækker salat med blandet kål</h2>
+                    <p>Nem og lækker kålsalat - den perfekte side-dish.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="bigbox">
+                <a href="risotto.html">
+                    <img src="risotto.jpg" alt="Risotto">
+                </a>
+        </div>
+
+    <footer> 
+        <p2>Om os</p2> </br>
+        <p3>Kontakt:</p3> </br>
+        <p4>Mail: toemkoeleskabet@kbh.dk</p4></br>
+        <p5>Tlf: + 45 66 66 99 99</p5> </br>
+    </footer>
+
+    <style> /* css */
+
+.logo{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20 px;
+    color: #010101;
+    text-transform: u;
+}
+        
+
+body { /*Styler dele af vores body(skrifttype og linjeafstand*/
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+}
+
+header { /*Styler feltet ovskriften står i(altså vores <head>)*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header .logo { /*Styler overskrift i vores head "TØMKØLESKABET.dk"*/
+    font-size: 35px;
+    font-weight: bold;
+    color: #010101;
+    margin-inline: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+}
+
+nav ul { /* Styler vores liste med de tre overskifter i vores head ("Opskrifter", "Om os", "Mit køleskab")*/
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a { /* Styler de tre  overskifter i vores head */
+    text-decoration: none;
+    color: #595858;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 70px;
+}
+
+nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversrifter*/
+    color: #90c691; 
+}
+
+
+.hero img { /*Styler vores billede*/
+    max-width: 100%;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.content { /*Styler hvordan vores tekst på forsiden (både h1 og p) skal stå*/
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+    text-align: center;
+    
+}
+
+.content h1 { /* Styler overskriften "Velkommen til Tøm Køleskabet"*/
+    font-size: 45px;
+    font-weight: bold;
+    margin-top: 80px;
+    margin-bottom: 40px;
+    color: #3e3b3b;
+    text-align: justify;
+    border-bottom: 5px solid #90c691;
+}
+
+.content p { /* Styler den korte beskrivelse under h1*/
+    font-size: 20px;
+    color: #595858;
+    text-align: justify;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+    margin-bottom: 70px;
+}
+
+/*Styler vores container på forsiden*/
+.container {
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.box {
+    width: 300px;
+    background-color: #eaefea;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.2s;
+    margin-left: 5px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+}
+
+.box h2 {
+    font-size: 1.2em;
+    margin: 15px;
+    color: #3e3b3b;
+    font-weight: bold;
+ 
+}
+
+.box p {
+    font-size: 0.9em;
+    margin: 0 15px 15px;
+    color: #3e3b3b;
+
+}
+
+.box a {
+    text-decoration: none;
+    color: #90c691;
+    background-color: #90c691;
+
+}
+
+/*Styler den stor box på forsiden*/
+.bigcontainer {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+}
+
+.bigbox {
+    max-width: 85%;
+    max-height: fit-content;
+    margin-left: 110px;
+    background-color: #eaefea;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.2s;
+}
+.bigbox:hover {
+    transform: scale(1.05);
+}
+
+.bigbox img {
+    width: 100%;
+    height: 300px;
+    
+}
+
+.bigbox h2 {
+    font-size: 1.2em;
+    margin: 15px;
+    color: #3e3b3b;
+    font-weight: bold;
+    
+}
+
+.bigbox p {
+    font-size: 0.9em;
+    margin: 0 15px 15px;
+    color: #3e3b3b;
+
+    
+}
+
+.bigbox a {
+    text-decoration: none;
+    color: #90c691;
+    background-color: #90c691;
+
+}
+
+
+
+/* Dropdown container styling */
+.dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: rgb(75, 75, 75);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+        }
+
+        
+
+        /* Show dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style dropdown button */
+        .dropdown button {
+            text-decoration: none;
+            color: #4f4f4f;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-right: 70px;
+            border: none;
+            background-color: white;
+            font-size: 16px;
+            
+
+        }
+
+        .dropdown button:hover {
+            background-color: #90c691;
+        }
+
+footer { /*Styler vores footer*/
+    background-color: #90c691;
+    color: #fff;
+    text-align: center;
+    height: 100px;
+    font-size: 75%;
+    font-family:Arial, Helvetica, sans-serif;
+    margin-top: 50px;
+}
+    </style>
+</body>
+</html>
