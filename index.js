@@ -75,11 +75,13 @@ function displayResults(results) {
         let buttontext = favoritecheck ? "Remove from favorites" : "Add to favorites";
 
         recipeDiv.innerHTML =
-            '<img src="' + recipe.image + '" alt="' + recipe.name + '">' +
-            '<div>' +
-            '<h3>' + recipe.name + '</h3>' +
-            '<p>Ingredients: ' + recipe.ingredients.join(", ") + '</p>' +
-            '<button id="button' + i + '">' + buttontext + '</button>'
+        '<div class="recipe-box">' + 
+        '<div class="recipe-container">' + 
+        '<img class="recipe-box img" src="' + recipe.image + '" alt="' + recipe.name + '">' +
+        '<br>'+
+        '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +
+        '<p class="recipe-box p">Ingredients: ' + recipe.ingredients.join(", ") + '</p>' +
+        '<button id="button'+ i +'" class="recipe-favorite-btn">Add To Favorites</button>' +
         '</div>';
 
         resultsDiv.appendChild(recipeDiv);
@@ -115,4 +117,10 @@ function removeFromFavorites(recipe) {
     favorites = favorites.filter(fav => fav.name !== recipe.name);
     localStorage.setItem("favorites", JSON.stringify(favorites));
     console.log(favorites)
+}
+
+function displayfavorites() {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+
+    displayResults(favorites);
 }

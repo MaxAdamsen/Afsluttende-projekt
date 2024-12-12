@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Om os</title>
+    <title>Favoritter</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="index.js"></script>
 </head>
 <body>
     <header>
@@ -30,10 +31,10 @@
         </section>
         <section class="content">
             <h1>Favoritter</h1>
-            <p> 
-                Dine favorit opskrifter
-            </p>
         </section>
+        <div id="results">
+        
+        </div>
     </main>
     <footer> 
         <p2>Om os</p2> </br>
@@ -194,8 +195,13 @@ footer { /*Styler vores footer*/
         .dropdown button:hover {
             background-color: #90c691;
         }
-
     </style>
+
 </body>
+<script>
+      window.onload = function(){
+        displayfavorites()
+      }
+</script>
 </html>
 

@@ -1,0 +1,380 @@
+.logo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20 px;
+    color: #010101;
+    text-transform: u;
+}
+        
+
+body { /*Styler dele af vores body(skrifttype og linjeafstand*/
+    font-family: Arial, sans-serif;
+    line-height: 1.8;
+}
+
+header { /*Styler feltet ovskriften står i(altså vores <head>)*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+header.logo a { /*Styler overskrift i vores head "TØMKØLESKABET.dk"*/
+    font-size: 35px;
+    font-weight: bold;
+    color: #010101;
+    margin-inline: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+nav ul { /* Styler vores liste med de tre overskifter i vores head ("Opskrifter", "Om os", "Mit køleskab")*/
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li a, nav ul li button { /* Styler de tre  overskifter i vores head */
+    text-decoration: none;
+    color: #595858;
+    font-weight: bold;
+    padding: 5px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-right: 70px;
+    font-size: 16px;
+    text-transform: uppercase;
+    
+}
+
+nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversrifter*/
+    color: #90c691; 
+}
+
+
+.hero img { /*Styler vores billede*/
+    max-width: 100%;
+    height: 400px;
+    margin: 0;
+    padding: 0;
+   
+}
+
+.content { /*Styler hvordan vores tekst på forsiden (både h1 og p) skal stå*/
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 0 15px;
+    text-align: center;
+    
+}
+
+.content h1 { /* Styler overskriften "Velkommen til Tøm Køleskabet"*/
+    font-size: 45px;
+    margin-bottom: 20px;
+    color: #3e3b3b;
+    text-align: center;
+    border-bottom: 5px solid #90c691;
+    font-weight: bold;
+}
+
+.content p { /* Styler den korte beskrivelse under h1*/
+    font-size: 20px;
+    color: #595858;
+    text-align: justify;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.grid-container {/* Styler vores grid*/
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: #ffffff;
+  padding: 10px;
+  gap: 20px;
+  
+
+}
+.grid-item { /* Styler items i vores grid*/
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #90c691;
+  padding: 20px;
+  font-size: 50px;
+  text-align: center;
+}
+
+footer { /*Styler vores footer*/
+    background-color: #90c691;
+    color: #fff;
+    text-align: center;
+    height: 100px;
+    font-size: 75%;
+    font-family:Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+/* Dropdown container styling */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        /* Dropdown menu styling */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: rgb(75, 75, 75);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            font-size: 12px;
+        }
+
+        
+
+        /* Show dropdown menu on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        /* Style dropdown button */
+        .dropdown button {
+            text-decoration: none;
+            color: #4f4f4f;
+            font-weight: bold;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-right: 70px;
+            border: none;
+            background-color: white;
+            font-size: 16px;
+            
+
+        }
+
+        .dropdown button:hover {
+            background-color: #90c691;
+        }
+
+
+.carousel-item {
+    height: 100%;
+}
+.carousel-inner {
+    height: 100%;
+}
+.carousel img {
+    height: 100%;
+    object-fit: cover;
+}
+.side-carousel {
+    height: 100%;
+}
+.carousel-section {
+    margin-bottom: 50px; /* Tilføjer afstand under carousellen */
+}
+
+/*Styler vores container på forsiden*/
+.container {
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.box {
+    width: 300px;
+    background-color: #eaefea;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.box:hover {
+    transform: scale(1.05);
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+}
+
+.box h2 {
+    font-size: 1.2em;
+    margin: 15px;
+    color: #000000;
+    text-align: center;
+    font-weight: bold;
+ 
+}
+
+.box p {
+    font-size: 0.9em;
+    margin: 0 15px 15px;
+    color: #000000;
+    text-align: center;
+}
+
+.box a {
+    text-decoration: none;
+    color: #90c691;
+    background-color: #90c691;
+
+}
+
+#results {
+    margin-top: 20px;
+}
+.recipe {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+.recipe img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 15px;
+    border-radius: 5px;
+}
+.recipe h3 {
+    margin: 0;
+}
+.recipe p {
+    margin: 5px 0 0;
+}
+
+.box img {
+    width: 100%;
+    height: 200px;
+    display: block;
+    object-fit: cover; 
+}
+
+.search-container {
+    display: flex; /* For at placere input og knappen på samme linje */
+    justify-content: flex-end; /* Placerer dem til højre */
+    align-items: center; /* Justerer dem vertikalt */
+    margin-top: 20px; /* Skaber afstand fra billedet */
+    gap: 10px; /* Afstand mellem input og knap */
+}
+
+#ingredients {
+    width: 300px; /* Bredden af søgefeltet */
+    padding: 10px; /* Indvendig afstand for bedre læsbarhed */
+    font-size: 16px; /* Større tekst */
+    border: 1px solid #ccc; /* Standard kant */
+    border-radius: 5px; /* Bløde hjørner */
+}
+
+#searchbutton {
+    padding: 10px 20px; /* Gør knappen større */
+    font-size: 16px; /* Tekststørrelse */
+    font-weight: bold; /* Fed tekst */
+    background-color: #90c691; /* Grøn baggrund */
+    color: white; /* Hvid tekst */
+    border: none; /* Fjern kant */
+    border-radius: 5px; /* Bløde hjørner */
+    cursor: pointer; /* Ændrer musen til en hånd ved hover */
+}
+
+#searchbutton:hover {
+    background-color: #78b57a; /* Mørkere grøn ved hover */
+}
+
+.navbar-brand{
+    font-size: 24px; /* Gør teksten større */
+    font-weight: bold; /* Gør teksten fed */
+    text-transform: uppercase; /* Gør teksten til store bogstaver */
+    color: #000; /* Sort farve, eller vælg en anden */
+}
+
+.recipe-container {
+    width: 100%;
+    display: flex;
+    flex-wrap:wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.recipe-box {
+    width: 300px;
+    background-color: #f9f9f9; /* Lysere baggrund for variation */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: left;
+    transition: transform 0.2s;
+}
+
+.recipe-box:hover {
+    transform: scale(1.05); /* Gør boksen større ved hover */
+}
+
+.recipe-box img {
+    width: 100%;
+    height: 100px;
+}
+
+.recipe-box h2 {
+    font-size: 1em;
+    margin: 15px;
+    color: #333333; /* Mørkere tekst for kontrast */
+    text-align: center;
+    font-weight: bold;
+    box-shadow: 0;
+    max-width: fit-content;
+    
+}
+
+.recipe-box p {
+    font-size: 1em;
+    margin: 0 15px 15px;
+    color: #666666; /* Blød grå tekst */
+    text-align: center;
+    display: none;
+}
+
+.recipe-favorite-btn {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #90c691;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.recipe-favorite-btn:hover {
+    background-color: #78b57a;
+}
+
+
+
+
+footer { /*Styler vores footer*/
+    background-color: #90c691;
+    color: #fff;
+    text-align: center;
+    height: 100px;
+    font-size: 75%;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+
+
