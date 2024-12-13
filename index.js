@@ -75,10 +75,10 @@ function displayResults(results) {
         let buttontext = favoritecheck ? "Remove from favorites" : "Add to favorites";
 
         recipeDiv.innerHTML =
-        '<div class="recipe-box">' +
-        '<div class="recipe-container">' +
+        '<div class="recipe-box">' + 
+        '<div class="recipe-container">' + 
         '<img class="recipe-box img" src="' + recipe.image + '" alt="' + recipe.name + '">' +
-        '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +
+        '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +  
         '<button id="button'+ i +'" class="recipe-favorite-btn">'+buttontext+'</button>' +
         '<button id="modalbutton'+ i +'" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Show Recipe</button>' +
         '</div>'
@@ -92,7 +92,7 @@ function displayResults(results) {
         } else {
             button.addEventListener("click", () => addToFavorites(recipe));
         }
-
+        
         let modalbutton = document.getElementById("modalbutton" + i);
         modalbutton.addEventListener("click", () => modalinfo(recipe));
     }
