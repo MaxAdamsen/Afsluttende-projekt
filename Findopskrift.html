@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TømKøleskabet - Hovedside</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="styling.css">
-    
+
 </head>
+
 <body>
     <header>
-        <div class="logo"><a href="Forside.html">TØMKØLESKABET.dk</a></div>
+        <div class="logo"><a href="index.html">TØMKØLESKABET.dk</a></div>
         <nav>
             <ul>
-                <li><a href="Opskrifter.html">Opskrifter</a></li>    
+                <li><a href="Opskrifter.html">Opskrifter</a></li>
                 <li><a href="Omos.html">Om os</a></li>
                 <li class="dropdown">
                     <button>Mit Køleskab</button>
@@ -21,35 +24,35 @@
                         <a href="favoritter.html">Favoritter</a>
                         <a href="Findopskrift.html">Find opskrift</a>
                         <a href="#">Upload dine varer</a>
-        </div>
-    </div>
-                    
-                        
-                        </div>
+                    </div>
+                    </div>
+
+
+                    </div>
                 </li>
-               
+
             </ul>
         </nav>
     </header>
 
-        <section class="hero">
-            <img src="pictures/mad.jpg">
-        </section>
+    <section class="hero">
+        <img src="pictures/mad.jpg">
+    </section>
 
 
 
-        <nav class="navbar bg-body-tertiary">
-            <div class="container-fluid">
-                <a class="navbar-brand">Find din opskrift her!</a>
-                <div class="search-container">
-                    <input id="ingredients" class="form-control me-2" placeholder="Search" aria-label="Search">
-                    <button id="searchbutton" class="btn btn-outline-success" onclick="searchswitch(data)">Søg</button>
-                </div>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand">Find din opskrift her!</a>
+            <div class="search-container">
+                <input id="ingredients" class="form-control me-2" placeholder="Search" aria-label="Search">
+                <button id="searchbutton" class="btn btn-outline-success" onclick="searchswitch(data)">Søg</button>
             </div>
-        </nav>
+        </div>
+    </nav>
 
 
-        
+
 
 
     <main>
@@ -60,8 +63,7 @@
                         <h5 class="modal-title" id="modallabel" style="font-size: xx-large; font-weight: bolder;"></h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="modal-body modalbody" id="modalbody">
-                        <ol id="modallist"></ol>
+                    <div class="modal-body" id="modalBody">
                         <p>Ingredienser og fremgangsmåde for pizzasnegle...</p>
                     </div>
                     <div class="modal-footer">
@@ -71,12 +73,17 @@
             </div>
         </div>
 
-    <div id="results" class="container"></div>
-        
-    </div>
-</main>
-<script src="index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+        <div id="results" class="container"></div>
+
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+        integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+        crossorigin="anonymous"></script>
+    <script src="index.js"></script>
 </body>
+
 </html>
