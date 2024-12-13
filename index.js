@@ -50,6 +50,7 @@ function search2(data, words) {
         return count >= 3;
     });
 }
+
 function displayResults(results) {
 
     let resultsDiv = document.getElementById("results");
@@ -126,4 +127,19 @@ function displayfavorites() {
 function modalinfo(recipe){
     let title = document.getElementById("modallabel");
     title.innerHTML = recipe.name;
+    let modalBody = document.getElementById("modalbody");
+    let instructions = recipe.instructions.split("\r\n");
+    let i = 1;
+
+modalBody.innerHTML =
+    '<img class="modalimg" src="' + recipe.image + '" alt="' + recipe.name + '">' +
+    '<h3 style="font-size: x-large; font-weight: bold;">Ingredients</h3>' +
+    '<ul class="mb-4">' +
+        recipe.ingredients.map(ing => '<li>' + ing + '</li>').join('') +
+    '</ul>' +
+    '</div>' +
+    '<h3>Instructions</h3>' +
+    '<div class="d-flex flex-column">' +
+        instructions.map(instruction => '<div class="mb-3">' + (i++) + '. ' + instruction + '</div>').join('') +
+    '</div>';
 }
