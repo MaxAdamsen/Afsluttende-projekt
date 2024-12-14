@@ -9,7 +9,6 @@
 .catch(error => {
     console.error("error:", error);
 });
-
 let ingredientlist = [
   "Chicken",
   "Salmon",
@@ -587,3 +586,43 @@ let ingredientlist = [
   "Buckwheat",
   "Prunes"
 ]
+
+let valgteIngredienser = [];
+
+function tilføjIngrediens(input) {
+  const inputLowerCase = input.toLowerCase();
+
+  if (ingredientlist.some(ing => ing.toLowerCase() === inputLowerCase)) {
+    if (!valgteIngredienser.includes(input)) {
+      valgteIngredienser.push(input);
+      console.log("Ingrediens tilføjet: " + input);
+    } else {
+      console.log("Ingrediensen '" + input + "' er allerede tilføjet.");
+    }
+  } else {
+    console.log("Ingrediensen '" + input + "' findes ikke i listen.");
+  }
+  visValgteIngredienser();
+}
+
+function visValgteIngredienser() {
+    const valgtListe = document.getElementById("valgte-ingredienser");
+    valgtListe.innerHTML = valgteIngredienser.map(function(ing) {
+        return "<li>" + ing + "</li>";
+    }).join("");
+}
+
+
+function udfyldIngrediensListe() {
+    const ingrediensListe = document.getElementById("ingredienser-liste");
+    ingrediensListe.innerHTML = ingredientlist.map(function(ing) {
+        return "<li>" + ing + "</li>";
+    }).join("");
+}
+
+
+function KlikTilføjIngrediens() {
+  const input = document.getElementById("ingredient-input").value;
+  tilføjIngrediens(input);
+  document.getElementById("ingredient-input").value = "";
+}

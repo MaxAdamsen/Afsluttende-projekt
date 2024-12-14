@@ -72,7 +72,7 @@ function displayResults(results) {
         recipeDiv.className = "recipe";
 
         let favoritecheck = favorites.some(favorite => favorite.name === recipe.name);
-        let buttontext = favoritecheck ? "Remove from favorites" : "Add to favorites";
+        let buttontext = favoritecheck ? "<i class='bi bi-star-fill'></i>" : "<i class='bi bi-star'></i>";
 
         recipeDiv.innerHTML =
         '<div class="recipe-box">' +
