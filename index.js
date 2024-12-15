@@ -201,7 +201,7 @@ function updateingredients() {
 
   selectedingredients.forEach(ingredient => {
     group.innerHTML += `
-      <div id="${ingredient}" onclick="remover('${ingredient}')">
+      <div id="${ingredient}" onclick="remover('${ingredient}')" class="btn-group me-2">
         <button type="button" class="btn btn-primary ingredientbutton">${ingredient}</button>
       </div>
     `;
