@@ -146,7 +146,7 @@ function modalinfo(recipe){
     let title = document.getElementById("modallabel");
     title.innerHTML = recipe.name;
     let modalBody = document.getElementById("modalbody");
-    let instructions = recipe.instructions.split("\r\n");
+    let instructions = recipe.instructions.split("\r\n").filter(instruction => instruction.trim() !== "");
     let i = 1;
 
 modalBody.innerHTML =
@@ -220,7 +220,7 @@ function remover(ingredient){
 
 window.onload = async function(){
   let buttontxt = document.getElementById("modelbutton");
-  model = await cocoSsd.load();
+  model = await mobilenet.load();
   buttontxt.innerHTML = "Identify Ingredients";
 }
 
@@ -232,11 +232,15 @@ async function detectobjects(){
   imghtml.src = URL.createObjectURL(file);
 
   imghtml.onload = async function () {
-    let predictions = await model.detect(imghtml);
+    let threshold = 0.7;
 
+    let predictions = await model.classify(imghtml);
+    console.log(predictions)
+    predictions = predictions.filter(predicition => predicition.probability >= threshold);
+    
     let predictionsfiltered = predictions.filter((prediction) => {
-      return data2.some(ingredient => ingredient.toLowerCase() === prediction["class"].toLowerCase());
-    }).map(prediction => prediction["class"]);
+      return data2.some(ingredient => ingredient.toLowerCase() === prediction.className.toLowerCase());
+    }).map(prediction => prediction.className);
 
     predictionsfiltered.forEach(ingredient => {
       if (!selectedingredients.includes(ingredient)) {
