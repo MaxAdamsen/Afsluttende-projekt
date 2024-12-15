@@ -443,3 +443,7 @@ footer { /*Styler vores footer*/
   border: none !important;
   padding: 3px 10px !important;
 }
+
+.ingredientbutton:hover{
+  background-color: rgb(206, 26, 26);
+}

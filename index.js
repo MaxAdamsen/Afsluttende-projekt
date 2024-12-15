@@ -1,7 +1,11 @@
 let data;
+let data2;
+let selectedingredients = [];
 let searchbar = document.getElementById("ingredients");
+let box = document.getElementById("resultbox");
+let resultlist = document.getElementById("resultlist");
 
-async function fetchData() {
+async function fetchData_rec() {
     try {
         const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/varer.json");
         if (!response.ok) {
@@ -14,7 +18,21 @@ async function fetchData() {
     return data;
 }
 
-fetchData();
+fetchData_rec();
+
+async function fetchData_ing() {
+    try {
+        const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/ingredients.json");
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        data2 = await response.json();
+    } catch (error) {
+        console.error("Error fetching or parsing data:", error);
+    }
+    return data2;
+}
+fetchData_ing();
 
 function words() {
     let søgning = document.getElementById("ingredients").value;
@@ -22,8 +40,8 @@ function words() {
 }
 
 function searchswitch(data) {
-    let Words = words();
-    let amount = words().length;
+    let Words = selectedingredients.map(ing => ing.toLowerCase());
+    let amount = selectedingredients.length;
     let filtered;
 
     if (amount < 3) {
@@ -149,7 +167,7 @@ searchbar.addEventListener("keyup", function(){
     let result = [];
     let input = searchbar.value;
     if(input.length !== 0){
-        result = ingredientlist.filter((word)=>{
+        result = data2.filter((word)=>{
             return word.toLowerCase().includes(input.toLowerCase());
         })
     }
@@ -157,16 +175,43 @@ searchbar.addEventListener("keyup", function(){
 })
 
 function displayresultbox(result){
-    let box = document.getElementById("resultbox");
-    let resultlist = document.getElementById("resultlist");
     if(!result.length){
         resultlist.innerHTML = "";
         box.style.display = "none";
     }else {
     let autocomplete = result.map((list)=>{
-        return "<li>" + list + "</li>";
+        return "<li onclick=autocomplete(this)>" + list + "</li>";
     });
     resultlist.innerHTML = autocomplete.join("");
     box.style.display = "block";
     }
+}
+
+function autocomplete(list){
+    selectedingredients.push(list.innerHTML);
+    searchbar.value = '';
+    resultlist.innerHTML = '';
+    box.style.display = "none";
+    console.log(selectedingredients);
+    addingredient(list);
+}
+
+function addingredient(list){
+    let group = document.getElementById("ingredientgroup");
+    let ingredient = list.innerHTML;
+        group.innerHTML += `
+    <div id="${ingredient}" onclick="remover('${ingredient}')">
+        <button type="button" class="btn btn-primary ingredientbutton">${ingredient}</button>
+    </div>
+`
+}
+
+function remover(ingredient){
+    let index = selectedingredients.indexOf(ingredient);
+    let ingredientdiv = document.getElementById(ingredient);
+    if (index > -1){
+        selectedingredients.splice(index, 1);
+    }
+    ingredientdiv.remove();
+    console.log(selectedingredients);
 }

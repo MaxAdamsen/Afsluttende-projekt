@@ -46,7 +46,7 @@
             <a class="navbar-brand">Find din opskrift her!</a>
             <div class="search-container">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search" id="ingredients">
+                  <input type="text" class="form-control" placeholder="Search" id="ingredients" autocomplete="off">
                   <button class="btn btn-success" onclick="searchswitch(data)">Søg</button>
                 </div>
                 <div class="result-box position-absolute" style="width: 80%; display: none;" id="resultbox">
@@ -57,6 +57,9 @@
         </div>
     </nav>
 
+    <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+  <div class="btn-group me-2" role="group" id="ingredientgroup">
+</div>
 
 
 
