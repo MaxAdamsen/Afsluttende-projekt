@@ -1,5 +1,4 @@
-let data;
-let data2;
+let data, data2, model;
 let selectedingredients = [];
 let searchbar = document.getElementById("ingredients");
 let box = document.getElementById("resultbox");
@@ -193,17 +192,20 @@ function autocomplete(list){
     resultlist.innerHTML = '';
     box.style.display = "none";
     console.log(selectedingredients);
-    addingredient(list);
+    updateingredients(list);
 }
 
-function addingredient(list){
-    let group = document.getElementById("ingredientgroup");
-    let ingredient = list.innerHTML;
-        group.innerHTML += `
-    <div id="${ingredient}" onclick="remover('${ingredient}')">
+function updateingredients() {
+  let group = document.getElementById("ingredientgroup");
+  group.innerHTML = "";
+
+  selectedingredients.forEach(ingredient => {
+    group.innerHTML += `
+      <div id="${ingredient}" onclick="remover('${ingredient}')">
         <button type="button" class="btn btn-primary ingredientbutton">${ingredient}</button>
-    </div>
-`
+      </div>
+    `;
+  });
 }
 
 function remover(ingredient){
@@ -214,4 +216,33 @@ function remover(ingredient){
     }
     ingredientdiv.remove();
     console.log(selectedingredients);
+}
+
+window.onload = async function(){
+  let buttontxt = document.getElementById("modelbutton");
+  model = await cocoSsd.load();
+  buttontxt.innerHTML = "Identify Ingredients";
+}
+
+async function detectobjects(){
+  let uploadedimage = document.getElementById("formFile");
+  let imghtml = document.getElementById("imghtml");
+
+  let file = uploadedimage.files[0];
+  imghtml.src = URL.createObjectURL(file);
+
+  imghtml.onload = async function () {
+    let predictions = await model.detect(imghtml);
+
+    let predictionsfiltered = predictions.filter((prediction) => {
+      return data2.some(ingredient => ingredient.toLowerCase() === prediction["class"].toLowerCase());
+    }).map(prediction => prediction["class"]);
+
+    predictionsfiltered.forEach(ingredient => {
+      if (!selectedingredients.includes(ingredient)) {
+        selectedingredients.push(ingredient);
+      }
+  });
+  updateingredients()
+};
 }
