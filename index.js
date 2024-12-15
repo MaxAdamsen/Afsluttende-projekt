@@ -1,4 +1,6 @@
 let data;
+let searchbar = document.getElementById("ingredients");
+
 async function fetchData() {
     try {
         const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/varer.json");
@@ -120,7 +122,6 @@ function removeFromFavorites(recipe) {
 
 function displayfavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
     displayResults(favorites);
 }
 
@@ -142,4 +143,30 @@ modalBody.innerHTML =
     '<div class="d-flex flex-column">' +
         instructions.map(instruction => '<div class="mb-3">' + (i++) + '. ' + instruction + '</div>').join('') +
     '</div>';
+}
+
+searchbar.addEventListener("keyup", function(){
+    let result = [];
+    let input = searchbar.value;
+    if(input.length !== 0){
+        result = ingredientlist.filter((word)=>{
+            return word.toLowerCase().includes(input.toLowerCase());
+        })
+    }
+    displayresultbox(result);
+})
+
+function displayresultbox(result){
+    let box = document.getElementById("resultbox");
+    let resultlist = document.getElementById("resultlist");
+    if(!result.length){
+        resultlist.innerHTML = "";
+        box.style.display = "none";
+    }else {
+    let autocomplete = result.map((list)=>{
+        return "<li>" + list + "</li>";
+    });
+    resultlist.innerHTML = autocomplete.join("");
+    box.style.display = "block";
+    }
 }

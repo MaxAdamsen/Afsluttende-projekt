@@ -46,16 +46,11 @@
             <a class="navbar-brand">Find din opskrift her!</a>
             <div class="search-container">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search">
-                  <button class="btn btn-success">Søg</button>
+                  <input type="text" class="form-control" placeholder="Search" id="ingredients">
+                  <button class="btn btn-success" onclick="searchswitch(data)">Søg</button>
                 </div>
-                <div class="result-box position-absolute" style="width: 80%;">
-                    <ul class="list-group">
-                        <li class="list-group-item">Ingredient</li>
-                        <li class="list-group-item">Ingredient</li>
-                        <li class="list-group-item">Ingredient</li>
-                        <li class="list-group-item">Ingredient</li>
-                        <li class="list-group-item">Ingredient</li>
+                <div class="result-box position-absolute" style="width: 80%; display: none;" id="resultbox">
+                    <ul class="list-group" id="resultlist">
                       </ul>
                 </div>
               </div>
