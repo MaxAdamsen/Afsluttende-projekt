@@ -25,7 +25,6 @@
                     <div class="dropdown-content">
                         <a href="favoritter.html">Favoritter</a>
                         <a href="Findopskrift.html">Find opskrift</a>
-                        <a href="#">Upload dine varer</a>
                     </div>
                     </div>
 
@@ -44,18 +43,18 @@
 
     <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand">Ingredienser</a> </b>
+            <a class="navbar-brand">Ingredienser</a> 
             <form>
             <div class="mb-3">
                 <img src="" alt="" id="imghtml" style="display: none;">
                 <input class="form-control" type="file" id="formFile" accept="image/*">
               </div>
-              <button type="button" class="btn btn-primary" onclick="detectobjects()" id="modelbutton">Loading...</button>
+              <button type="button" class="btn btn-primary" onclick="detectobjects()" id="modelbutton">Vent venligst...</button>
             </form>
             <div class="search-container">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Search" id="ingredients" autocomplete="off">
-                  <button class="btn btn-success" onclick="searchswitch(data)">Søg</button>
+                  <button class="btn btn-succes" onclick="searchswitch(data)">Søg</button>
                 </div>
                 <div class="result-box position-absolute" style="width: 80%; display: none;" id="resultbox">
                     <ul class="list-group" id="resultlist">

@@ -1,18 +1,3 @@
-html {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-}
-
-body { /*Styler dele af vores body(skrifttype og linjeafstand*/
-  font-family: Arial, sans-serif;
-  line-height: 1.8;
-  margin: 0;
-  padding: 0;
-}
-
-
 header { /*Styler feltet ovskriften står i(altså vores <head>)*/
   display: flex;
   justify-content: space-between;
@@ -73,10 +58,8 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
 
 
 .hero img { /*Styler vores store billede*/
-  max-width: 100%;
+  width: 100%;
   height: 400px;
-  margin: 0;
-  padding: 0;
 }
 
 .content { /*Styler hvordan vores tekst på forsiden (både h1 og p) skal stå*/
@@ -84,7 +67,6 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
   margin: 20px auto;
   padding: 0 15px;
   text-align: center;
-  
 }
 
 .content h1 { /* Styler overskriften "Velkommen til Tøm Køleskabet"*/
@@ -123,6 +105,23 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
   overflow: hidden;
   text-align: left;
   transition: transform 0.2s;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box button {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .box:hover { /*Styler vores box, så når man kører musen henover boxen så udvider den sig en smule*/
@@ -151,60 +150,92 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
   background-color: #90c691;
 }
 
-.box img { /*Styler billedet i alle vores boxe*/
+.box img { /* Responsive images */
   width: 100%;
   height: 200px;
+  object-fit: cover;
   display: block;
-  object-fit: cover; 
-
+  flex-shrink: 0;
+  margin: 0;
 }
 
-.bigcontainer { /*Styler hvor på forsiden de to store boxe skal være*/
+.bigcontainer { /*Styler hvor på forsiden den øverste store box skal være*/
   max-width: 100%;
   padding: 0;
   margin: 0;
   justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
 }
 
-.bigbox { /*Styler de to store boxe*/
-  max-width: 100vh;
-  max-height: fit-content;
-  margin-left: 110px;
-  background-color: #eaefea;
+.bigbox{
+  box-sizing: border-box;
+  width: 85%;
+  margin: 10px;
   border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s;
+  background-color: #eaefea;
+  border-color:transparent;
 }
-.bigbox:hover { /*Styler vores to store boxe, så når man kører musen henover boxen så udvider den sig en smule */
+
+.bigbox img { /*Styler billederne i den store box*/  
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bigbox:hover { /*Når man kører musen henover boxen, udvider den sig en smule */
   transform: scale(1.05);
 }
 
-.bigbox img { /*Styler billederne i de store bokse*/  max-width: 100%;
-  height: auto;;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.bigbox h2 { /*Styler oversrift i den ene store box*/
+.figure-caption { /*Styre den store box' caption*/
   font-size: 1.2em;
   margin: 15px;
-  color: #3e3b3b;
+  color: #000000;
+  text-align: center;
   font-weight: bold;
 }
 
-.bigbox p { /*Styler den test der er under titlen i de to store boxe*/
-  font-size: 0.9em;
-  margin: 0 15px 15px;
-  color: #3e3b3b;
+.bigcontainer2 { /*Styler hvor på forsiden den nederste store box skal være*/
+  max-width: 100%;
+  padding: 0;
+  margin: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  display: flex;
+  
+}
+.bigbox2 { /*Styler den nederste store box*/
+  box-sizing: border-box;
+  width: 85%;
+  margin: 10px;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  border-color: transparent;
 }
 
-.bigbox a { /*Denne gør sådan så at man ikke kan se at der er et link*/
-  text-decoration: none;
-  color: #90c691;
-  background-color: #90c691;
-
+.bigbox2:hover { /*Når man kører musen henover boxen, udvider den sig en smule */
+  transform: scale(1.05);
 }
+
+.bigbox2 img { /*Styler billederne i den store box*/  
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 .dropdown { /* Dropdown container styling */
   position: relative; 
@@ -245,7 +276,7 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
 }
 
 .dropdown button:hover {  /* Styler kanppen på vores dropdown menu, så når man kører musen over bliver teksten grøn */
-  background-color: #90c691;
+  color: #90c691;
  }
 
 
