@@ -88,14 +88,18 @@ function displayResults(results) {
         let buttontext = favoritecheck ? "<i class='bi bi-star-fill'></i>" : "<i class='bi bi-star'></i>";
 
         recipeDiv.innerHTML =
-            '<div class="recipe-box">' +
-            '<div class="recipe-container">' +
-            '<img class="recipe-box img" src="' + recipe.image + '" alt="' + recipe.name + '">' +
-            '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +
-            '<button id="button' + i + '" class="recipe-favorite-btn">' + buttontext + '</button>' +
-            '<button id="modalbutton' + i + '" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Show Recipe</button>' +
-            '</div>'
-        '</div>'
+        '<div class="col h-100">' +
+        '<div class="card h-100" style="border: none">' +
+                '<img class="card-img-top mx-auto d-block mt-3" src="' + recipe.image + '" alt="' + recipe.name + '">' +
+                    '<div class="card-body">' +
+                    '<h5 class="card-title text-center">' + recipe.name + '</h5>' +
+                    '<div class="mt-auto">' +
+                    '<button id="button' + i + '" class="recipe-favorite-btn">' + buttontext + '</button>' +
+                    '<button id="modalbutton' + i + '" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Show Recipe</button>' +
+                    '</div>' +
+                '</div>' +
+            '</div>' +
+        '</div>';
 
         resultsDiv.appendChild(recipeDiv);
         let button = document.getElementById("button" + i);

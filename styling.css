@@ -489,3 +489,9 @@ footer { /*Styler vores footer*/
 .portioner{
   font-weight: bold;
 }
+
+.card-body {
+  display: flex; /* Apply flexbox */
+  flex-direction: column; /* Stack items inside the body */
+  flex-grow: 1; /* Allow the body to grow and fill the card */
+}
