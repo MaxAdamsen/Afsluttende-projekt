@@ -162,7 +162,7 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
 .bigcontainer { /*Styler hvor på forsiden den øverste store box skal være*/
   max-width: 100%;
   padding: 0;
-  margin: 0;
+  margin: 0 auto;
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
@@ -283,9 +283,11 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
 .carousel-item { /*Gør så at alle vores elementer i carousellen strækker sig 100% af højden i dens container*/
   height: 100%;
 }
-.carousel-inner { /*Gør så alle elementer i den indre carousel også strækker sig 100% af dens højde*/
-  height: 100%;
+
+.col-md-6{
+  height: 452px;
 }
+
 .carousel img { /* Styler billederne i vores caousel */
   height: 100%;
   object-fit: cover;
@@ -413,17 +415,16 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
 }
 
 .recipe-favorite-btn:hover {  /* Styler favorit knappen på findopskrift siden så når man kører musen henover bliver den grøn */
-  background-color: rgb(182, 71, 108);
+  background-color: rgba(255, 230, 0, 0.733);
 }
 
-footer { /*Styler vores footer*/
-  background-color: #90c691;
+footer {
+  background-color: #90c691; /* Optional: Keep your color */
   color: #fff;
   text-align: center;
-  height: 100px;
+  padding: 1rem 0; /* Replace height and margin-top */
   font-size: 75%;
-  font-family:Arial, Helvetica, sans-serif;
-  margin-top: 50px;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .modalimg{
@@ -467,10 +468,6 @@ footer { /*Styler vores footer*/
 
 .result-box ul li:hover {
   background: #e9f3ff;
-}
-.list-group-item {
-  border: none !important;
-  padding: 3px 10px !important;
 }
 
 .ingredientbutton:hover{

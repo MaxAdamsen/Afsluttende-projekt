@@ -104,35 +104,23 @@ function displayResults(results) {
         resultsDiv.appendChild(recipeDiv);
         let button = document.getElementById("button" + i);
 
-        if (favoritecheck) {
-            button.addEventListener("click", () => removeFromFavorites(recipe));
-        } else {
-            button.addEventListener("click", () => addToFavorites(recipe));
-        }
-
+        button.addEventListener("click", () => {
+            let fav = JSON.parse(localStorage.getItem("favorites")) || [];
+            let favcheck = fav.some(favItem => favItem.name === recipe.name);
+        
+            if (favcheck) {
+                fav = fav.filter(favItem => favItem.name !== recipe.name);
+                button.innerHTML = "<i class='bi bi-star'></i>";
+            } else {
+                fav.push(recipe);
+                button.innerHTML = "<i class='bi bi-star-fill'></i>";
+            }
+        
+            localStorage.setItem("favorites", JSON.stringify(fav));
+        });
         let modalbutton = document.getElementById("modalbutton" + i);
         modalbutton.addEventListener("click", () => modalinfo(recipe));
     }
-}
-
-function addToFavorites(recipe) {
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
-    if (favorites.some(fav => fav.name === recipe.name)) {
-        alert("This recipe is already in your favorites!");
-        return;
-    }
-
-    favorites.push(recipe);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    console.log(favorites)
-}
-
-function removeFromFavorites(recipe) {
-    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    favorites = favorites.filter(fav => fav.name !== recipe.name);
-    localStorage.setItem("favorites", JSON.stringify(favorites));
-    console.log(favorites)
 }
 
 function displayfavorites() {
@@ -145,7 +133,6 @@ function modalinfo(recipe) {
     title.innerHTML = recipe.name;
     let modalBody = document.getElementById("modalbody");
     let instructions = recipe.instructions.split("\r\n").filter(instruction => instruction.trim() !== "");
-    let i = 1;
 
     modalBody.innerHTML =
         '<img class="modalimg" src="' + recipe.image + '" alt="' + recipe.name + '">' +
@@ -155,8 +142,8 @@ function modalinfo(recipe) {
         '</ul>' +
         '</div>' +
         '<h3>Instructions</h3>' +
-        '<div class="d-flex flex-column">' +
-        instructions.map(instruction => '<div class="mb-3">' + (i++) + '. ' + instruction + '</div>').join('') +
+        '<div class="mb-4">' +
+        instructions.map(instruction => '<div class="mb-3">'+ instruction + '</div>').join('') +
         '</div>';
 }
 
@@ -177,7 +164,7 @@ function displayresultbox(result) {
         box.style.display = "none";
     } else {
         let autocomplete = result.map((list) => {
-            return "<li onclick=autocomplete(this)>" + list + "</li>";
+            return "<li onclick=autocomplete(this) class='list-group-item'>" + list + "</li>";
         });
         resultlist.innerHTML = autocomplete.join("");
         box.style.display = "block";

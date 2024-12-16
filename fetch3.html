@@ -10,14 +10,11 @@
         let category = "Beef";
 
         function fetchRecipesAndDetails(category) {
-            // Fetch the list of meals in the category
             return fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
                 .then(response => response.json())
                 .then(categoryData => {
-                    // Extract meal IDs
                     const ids = categoryData.meals.map(meal => meal.idMeal);
 
-                    // Fetch all recipes using Promise.all
                     return Promise.all(
                         ids.map(id => {
                             return fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
@@ -28,7 +25,6 @@
                 });
         }
 
-        // Fetch recipes and log them
         fetchRecipesAndDetails(category)
             .then(recipes => {
                 console.log(JSON.stringify(recipes, null, 2));
