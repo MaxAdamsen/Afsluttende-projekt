@@ -16,7 +16,6 @@ async function fetchData_rec() {
     }
     return data;
 }
-
 fetchData_rec();
 
 async function fetchData_ing() {
@@ -32,11 +31,6 @@ async function fetchData_ing() {
     return data2;
 }
 fetchData_ing();
-
-function words() {
-    let søgning = document.getElementById("ingredients").value;
-    return søgning.split(",").map(word => word.trim().toLowerCase());
-}
 
 function searchswitch(data) {
     let Words = selectedingredients.map(ing => ing.toLowerCase());
@@ -94,13 +88,13 @@ function displayResults(results) {
         let buttontext = favoritecheck ? "<i class='bi bi-star-fill'></i>" : "<i class='bi bi-star'></i>";
 
         recipeDiv.innerHTML =
-        '<div class="recipe-box">' +
-        '<div class="recipe-container">' +
-        '<img class="recipe-box img" src="' + recipe.image + '" alt="' + recipe.name + '">' +
-        '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +
-        '<button id="button'+ i +'" class="recipe-favorite-btn">'+buttontext+'</button>' +
-        '<button id="modalbutton'+ i +'" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Show Recipe</button>' +
-        '</div>'
+            '<div class="recipe-box">' +
+            '<div class="recipe-container">' +
+            '<img class="recipe-box img" src="' + recipe.image + '" alt="' + recipe.name + '">' +
+            '<h2 class="recipe-box h2">' + recipe.name + '</h2>' +
+            '<button id="button' + i + '" class="recipe-favorite-btn">' + buttontext + '</button>' +
+            '<button id="modalbutton' + i + '" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal">Show Recipe</button>' +
+            '</div>'
         '</div>'
 
         resultsDiv.appendChild(recipeDiv);
@@ -142,51 +136,51 @@ function displayfavorites() {
     displayResults(favorites);
 }
 
-function modalinfo(recipe){
+function modalinfo(recipe) {
     let title = document.getElementById("modallabel");
     title.innerHTML = recipe.name;
     let modalBody = document.getElementById("modalbody");
     let instructions = recipe.instructions.split("\r\n").filter(instruction => instruction.trim() !== "");
     let i = 1;
 
-modalBody.innerHTML =
-    '<img class="modalimg" src="' + recipe.image + '" alt="' + recipe.name + '">' +
-    '<h3 style="font-size: x-large; font-weight: bold;">Ingredients</h3>' +
-    '<ul class="mb-4">' +
+    modalBody.innerHTML =
+        '<img class="modalimg" src="' + recipe.image + '" alt="' + recipe.name + '">' +
+        '<h3 style="font-size: x-large; font-weight: bold;">Ingredients</h3>' +
+        '<ul class="mb-4">' +
         recipe.ingredients.map(ing => '<li>' + ing + '</li>').join('') +
-    '</ul>' +
-    '</div>' +
-    '<h3>Instructions</h3>' +
-    '<div class="d-flex flex-column">' +
+        '</ul>' +
+        '</div>' +
+        '<h3>Instructions</h3>' +
+        '<div class="d-flex flex-column">' +
         instructions.map(instruction => '<div class="mb-3">' + (i++) + '. ' + instruction + '</div>').join('') +
-    '</div>';
+        '</div>';
 }
 
-searchbar.addEventListener("keyup", function(){
+searchbar.addEventListener("keyup", function () {
     let result = [];
     let input = searchbar.value;
-    if(input.length !== 0){
-        result = data2.filter((word)=>{
+    if (input.length !== 0) {
+        result = data2.filter((word) => {
             return word.toLowerCase().includes(input.toLowerCase());
         })
     }
     displayresultbox(result);
 })
 
-function displayresultbox(result){
-    if(!result.length){
+function displayresultbox(result) {
+    if (!result.length) {
         resultlist.innerHTML = "";
         box.style.display = "none";
-    }else {
-    let autocomplete = result.map((list)=>{
-        return "<li onclick=autocomplete(this)>" + list + "</li>";
-    });
-    resultlist.innerHTML = autocomplete.join("");
-    box.style.display = "block";
+    } else {
+        let autocomplete = result.map((list) => {
+            return "<li onclick=autocomplete(this)>" + list + "</li>";
+        });
+        resultlist.innerHTML = autocomplete.join("");
+        box.style.display = "block";
     }
 }
 
-function autocomplete(list){
+function autocomplete(list) {
     selectedingredients.push(list.innerHTML);
     searchbar.value = '';
     resultlist.innerHTML = '';
@@ -196,57 +190,57 @@ function autocomplete(list){
 }
 
 function updateingredients() {
-  let group = document.getElementById("ingredientgroup");
-  group.innerHTML = "";
+    let group = document.getElementById("ingredientgroup");
+    group.innerHTML = "";
 
-  selectedingredients.forEach(ingredient => {
-    group.innerHTML += `
+    selectedingredients.forEach(ingredient => {
+        group.innerHTML += `
       <div id="${ingredient}" onclick="remover('${ingredient}')" class="btn-group me-2">
-        <button type="button" class="btn btn-primary ingredientbutton">${ingredient}</button>
+        <button type="button" class="btn btn-primary ingredientbutton"><i class="bi bi-trash3"></i>${" "}${ingredient}</button>
       </div>
     `;
-  });
+    });
 }
 
-function remover(ingredient){
+function remover(ingredient) {
     let index = selectedingredients.indexOf(ingredient);
     let ingredientdiv = document.getElementById(ingredient);
-    if (index > -1){
+    if (index > -1) {
         selectedingredients.splice(index, 1);
     }
     ingredientdiv.remove();
     console.log(selectedingredients);
 }
 
-window.onload = async function(){
-  let buttontxt = document.getElementById("modelbutton");
-  model = await mobilenet.load();
-  buttontxt.innerHTML = "Identify Ingredients";
+window.onload = async function () {
+    let buttontxt = document.getElementById("modelbutton");
+    model = await mobilenet.load();
+    buttontxt.innerHTML = "Identify Ingredients";
 }
 
-async function detectobjects(){
-  let uploadedimage = document.getElementById("formFile");
-  let imghtml = document.getElementById("imghtml");
+async function detectobjects() {
+    let uploadedimage = document.getElementById("formFile");
+    let imghtml = document.getElementById("imghtml");
 
-  let file = uploadedimage.files[0];
-  imghtml.src = URL.createObjectURL(file);
+    let file = uploadedimage.files[0];
+    imghtml.src = URL.createObjectURL(file);
 
-  imghtml.onload = async function () {
-    let threshold = 0.7;
+    imghtml.onload = async function () {
+        let threshold = 0.7;
 
-    let predictions = await model.classify(imghtml);
-    console.log(predictions)
-    predictions = predictions.filter(predicition => predicition.probability >= threshold);
-    
-    let predictionsfiltered = predictions.filter((prediction) => {
-      return data2.some(ingredient => ingredient.toLowerCase() === prediction.className.toLowerCase());
-    }).map(prediction => prediction.className);
+        let predictions = await model.classify(imghtml);
+        console.log(predictions)
+        predictions = predictions.filter(predicition => predicition.probability >= threshold);
+        console.log(predictions)
+        let predictionsfiltered = predictions.filter((prediction) => {
+            return data2.some(ingredient => ingredient.toLowerCase() === prediction.className.toLowerCase());
+        }).map(prediction => prediction.className);
 
-    predictionsfiltered.forEach(ingredient => {
-      if (!selectedingredients.includes(ingredient)) {
-        selectedingredients.push(ingredient);
-      }
-  });
-  updateingredients()
-};
+        predictionsfiltered.forEach(ingredient => {
+            if (!selectedingredients.includes(ingredient)) {
+                selectedingredients.push(ingredient);
+            }
+        });
+        updateingredients()
+    };
 }
