@@ -28,9 +28,9 @@
                     </div>
                     </div>
                 </li>
-
             </ul>
         </nav>
+        
     </header>
     <section class="hero">
         <img src="pictures/mad.jpg" class="img-fluid">
@@ -50,11 +50,11 @@
             </form>
             <div class="search-container">
                 <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search" id="ingredients" autocomplete="off">
+                  <input type="text" class="form-control" placeholder="Indtast ingredienser (engelsk)" id="ingredients" autocomplete="off">
                   <button class="btn btn-primary" onclick="searchswitch(data)">Søg</button>
                 </div>
                 <div class="result-box position-absolute" style="width: 80%; display: none;" id="resultbox">
-                    <ul class="list-group" id="resultlist">
+                    <ul class="list-group mt-0" id="resultlist">
                       </ul>
                 </div>
               </div>
@@ -64,12 +64,7 @@
           </div>
     </nav>
 
-
-
-
-
-
-    <main class="flex grow-1">
+    <main class="flex grow-1" style="margin-bottom: 100px;">
         <div class="modal fade modal-xl" id="modal" tabindex="-1" aria-labelledby="modalall" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
@@ -78,7 +73,6 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body" id="modalbody">
-                        <p>Ingredienser og fremgangsmåde for pizzasnegle...</p>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Luk</button>
@@ -110,5 +104,4 @@
         <p5>Tlf: + 45 66 66 99 99</p5> </br>
     </footer>
 </body>
-
 </html>

@@ -2,3 +2,13 @@
 .map(line => line.replace(/^\d+(\.\s*)?/, ''));
 valgte istedet bare at gøre det til div'er, så det bare var styret af opskriften selv om der er steps eller ej.
 
+
+
+
+
+Slettet css:
+
+.logo a:visited {
+color:#010101;
+
+}

@@ -1,3 +1,4 @@
+<!------------------------------------------------------Bilag-------------------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="da">
 
@@ -9,8 +10,8 @@
     <title>Forside</title>
     <link rel="stylesheet" href="styling.css">
 </head>
-
 <body>
+ <!------------------------------------------------------Indgår i rapporten------------------------------------------------------------------->
     <header>
         <div class="logo"><a href="index.html">TØMKØLESKABET.dk</a></div>
 
@@ -27,26 +28,27 @@
             </ul>
         </nav>
     </header>
-
+    <section class="hero">
+        <img src="pictures/mad.jpg" class="img-fluid">
+    </section>
+    
+<!------------------------------------------------------Bilag-------------------------------------------------------------------------------->
     <main class="container-fluid">
-        <section class="hero">
-            <img src="pictures/mad.jpg" class="img-fluid">
-        </section>
         <section class="content">
             <h1>Velkommen til Tøm Køleskabet</h1>
             <p>Vi ønsker at hjælpe med at mindske madspild hjemme hos dig. Derudover elsker vi lækre og billige
                 madopskrifter. Her kan du få hjælp til at finde opskrifter ud fra netop de råvarer, du har i dit
-                køleskab.</p>
+                køleskab. Gå til "Find opskrift", som du finder under "Mit køleskab" og tilføj netop de varer, du ønsker.</p>
         </section>
-
-       
 
         <div class="bigcontainer container my-5">
             <div class="bigbox card">
+                <button class="btn btn-custom" data-bs-toggle="modal" data-bs-target="#modalPizzasnegle">
                 <figure class="figure mb-0">
                     <img src="pictures/pizzasnegle.jpg" class="figure-img img-fluid rounded" alt="...">
                     <figcaption class="figure-caption">Pizzasnegle - sjove og grove</figcaption>
                 </figure>
+                </button>
             </div>
         </div>
         <div class="container">
@@ -91,7 +93,7 @@
              </div>
         </div>
 
-
+<!---------------------------------------------------------Indgår i rapporten---------------------------------------------------------------->
         <!-- Modals -->
         <div class="modal fade" id="modalPizzasnegle" tabindex="-1" aria-labelledby="modalPizzasnegleLabel"
             aria-hidden="true">
@@ -112,6 +114,7 @@
                             <li>2 spsk rapsolie</li>
                             <li> 500 g pizzamel</li>
                         </ul>
+<!------------------------------------------------------Bilag-------------------------------------------------------------------------------->
                         <p>Fyld:</p>
                         <ul>
                             <li>1 Dåse koncentreret tomatpuré</li>
@@ -136,9 +139,6 @@
                             Skær den ud i 20 stykker.
                             Læg sneglene på bageplader med bagepapir og lad dem hæve tildækket i ca. 20 min.
                             Bag sneglene midt i ovnen i ca. 20 min. ved 200° - traditionel ovn.</p>
-
-                                
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Luk</button>
