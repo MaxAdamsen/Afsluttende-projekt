@@ -86,7 +86,7 @@ function displayResults(results) {
         let favoritecheck = favorites.some(favorite => favorite.name === recipe.name);
         let buttontext = favoritecheck ? "<i class='bi bi-star-fill'></i>" : "<i class='bi bi-star'></i>";
 
-        recipeDiv.innerHTML =
+        recipeDiv.innerHTML = 
             '<div class="col h-100">' +
                 '<div class="card h-100">' +
                 '<img class="card-img-top" src="' + recipe.image + '" alt="' + recipe.name + '">' +
@@ -216,7 +216,7 @@ async function detectobjects() {
     imghtml.src = URL.createObjectURL(file);
 
     imghtml.onload = async function () {
-        let threshold = 0.7;
+        let threshold = 0.0;
 
         let predictions = await model.classify(imghtml);
         console.log(predictions)
