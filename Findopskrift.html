@@ -1,6 +1,6 @@
+<!------------------------------------------------------Bilag-------------------------------------------------------------------------------->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,34 +36,32 @@
         <img src="pictures/mad.jpg" class="img-fluid">
     </section>
 
+<!------------------------------------------------------------Indgår i rapport-------------------------------------------------------------------------->
 
-
-    <nav class="navbar bg-body-tertiary">
+    <nav class="navbar bg-body-tertiary">  
         <div class="container-fluid">
             <a class="navbar-brand">Ingredienser</a> 
             <form>
-            <div class="mb-3">
+                <div class="mb-3">
                 <img src="" alt="" id="imghtml" style="display: none;">
                 <input class="form-control" type="file" id="formFile" accept="image/*">
-              </div>
+                </div>
               <button type="button" class="btn btn-primary" onclick="detectobjects()" id="modelbutton">Vent venligst...</button>
             </form>
+            
             <div class="search-container">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Indtast ingredienser (engelsk)" id="ingredients" autocomplete="off">
                   <button class="btn btn-primary" onclick="searchswitch(data)">Søg</button>
                 </div>
                 <div class="result-box position-absolute" style="width: 80%; display: none;" id="resultbox">
-                    <ul class="list-group mt-0" id="resultlist">
-                      </ul>
+                    <ul class="list-group mt-0" id="resultlist"></ul>
                 </div>
-              </div>
+            </div>
         </div>
-
-        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" id="ingredientgroup">
-          </div>
+        <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups" id="ingredientgroup"></div>
     </nav>
-
+<!------------------------------------------------------Bilag-------------------------------------------------------------------------------->
     <main class="flex grow-1" style="margin-bottom: 100px;">
         <div class="modal fade modal-xl" id="modal" tabindex="-1" aria-labelledby="modalall" aria-hidden="true">
             <div class="modal-dialog">

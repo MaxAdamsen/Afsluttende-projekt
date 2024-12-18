@@ -13,7 +13,7 @@
             return fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
                 .then(response => response.json())
                 .then(categoryData => {
-                    const ids = categoryData.meals.map(meal => meal.idMeal);
+                    let ids = categoryData.meals.map(meal => meal.idMeal);
 
                     return Promise.all(
                         ids.map(id => {

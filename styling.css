@@ -1,4 +1,4 @@
-/*Styling til overskrift og navbar-----------------------------------------------------------------------------------------------------------*/
+/*Styling til overskrift og navbar---------------------------Bilag--------------------------------------------------------------------------------*/
 
 header { /*Styler vores <head>*/
   display: flex;
@@ -18,6 +18,7 @@ header .logo { /*Styler overskrift i vores head "TØMKØLESKABET.dk"*/
   margin-bottom: 25px;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
+/*--------------------------------------------------------------Bilag-----------------------------------------------------------------------*/
 
 .logo a { /* Styler overskriften som link, men så det ikke ligner et link*/
   text-decoration: none;
@@ -378,15 +379,20 @@ nav ul li a:hover { /* Grøn farve når man holder musen hen over de tre oversri
 .btn-primary:hover { /*Bliver mørkere når musen kører over*/
   background-color: #639b64;
 }
-
+/*--------------------------------------------------------Indraget i rapporten--------------------------------------------------------------*/
 .result-box { /*Styler resultaterne der kommer frem, når man har søgt på indgrediens*/
   background: #fff;
   border: 1px solid #ccc;
   border-top: none;
-  display: none;
   max-height: 300px;
   overflow-y: scroll;
   z-index: +1;
+}
+/*------------------------------------------------------Bilag--------------------------------------------------------------------------------*/
+
+.list-group-item:hover{
+  background-color: rgba(127, 255, 212, 0.178);
+  cursor: pointer;
 }
 
 .result-box ul li { /*Styler listen i resultat-boksene*/
@@ -428,9 +434,4 @@ footer {
 
 .portioner{ /*styler teksten med hvor mange portioner opskriften er til*/
   font-weight: bold;
-}
-
-.list-group-item:hover{
-  background-color: rgba(127, 255, 212, 0.178);
-  cursor: pointer;
 }

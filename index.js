@@ -17,7 +17,7 @@ async function fetchData_rec() {
     return data;
 }
 fetchData_rec();
-
+//--------------------------------------------------------------------------Bilag----------------------------------------------------------------------------------------//
 async function fetchData_ing() {
     try {
         const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/ingredients.json");
@@ -31,7 +31,7 @@ async function fetchData_ing() {
     return data2;
 }
 fetchData_ing();
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 function searchswitch(data) {
     let Words = selectedingredients.map(ing => ing.toLowerCase());
     let amount = selectedingredients.length;
@@ -42,7 +42,7 @@ function searchswitch(data) {
     } else {
         filtered = search2(data, Words);
     }
-    displayResults(filtered)
+    displayResults(filtered);
     return filtered;
 }
 
@@ -121,12 +121,12 @@ function displayResults(results) {
         modalbutton.addEventListener("click", () => modalinfo(recipe));
     }
 }
-
+//--------------------------------------------------------------------------Bilag----------------------------------------------------------------------------------------//
 function displayfavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
     displayResults(favorites);
 }
-
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 function modalinfo(recipe) {
     let title = document.getElementById("modallabel");
     title.innerHTML = recipe.name;
@@ -148,10 +148,10 @@ function modalinfo(recipe) {
 
 searchbar.addEventListener("keyup", function () {
     let result = [];
-    let input = searchbar.value;
-    if (input.length !== 0) {
-        result = data2.filter((word) => {
-            return word.toLowerCase().includes(input.toLowerCase());
+    let input = searchbar.value; //Der bliver tilføjet en eventlistener, Når en bruger slipper knappen på deres tastatur, udløses funktionen.
+    if (input.length !== 0) { //Et tomt array oprettes (result). Det vil blive brugt til at gemme de filtrerede resultater.
+        result = data2.filter((word) => { //Variablen input henter værdien, som brugeren indtaster i søgefeltet (searchbar.value)
+            return word.toLowerCase().includes(input.toLowerCase()); //Et if-statement kontrollere  om input “ikke” er tomt: Hvis inputtet ikke er tomt bliver filter() brugt på data2, hvor hvert element fra data2, og kalder det for word, så bliver det omdannet til små bogstaver (toLowerCase() ), og bliver så tjekket om det indeholder det indtastede input. Det nye “result” bliver herefter afspillet i displayresultsbox funktionen.
         })
     }
     displayresultbox(result);
@@ -169,7 +169,7 @@ function displayresultbox(result) {
         box.style.display = "block";
     }
 }
-
+//--------------------------------------------------------------------------Bilag----------------------------------------------------------------------------------------//
 function autocomplete(list) {
     selectedingredients.push(list.innerHTML);
     searchbar.value = '';
@@ -178,14 +178,14 @@ function autocomplete(list) {
     console.log(selectedingredients);
     updateingredients(list);
 }
-
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 function updateingredients() {
     let group = document.getElementById("ingredientgroup");
     group.innerHTML = "";
 
     selectedingredients.forEach(ingredient => {
         group.innerHTML += `
-      <div id="${ingredient}" onclick="remover('${ingredient}')" class="btn-group me-2">
+      <div onclick="remover('${ingredient}')" class="btn-group me-2">
         <button type="button" class="btn btn-primary ingredientbutton"><i class="bi bi-trash3"></i>${" "}${ingredient}</button>
       </div>
     `;
@@ -194,12 +194,9 @@ function updateingredients() {
 
 function remover(ingredient) {
     let index = selectedingredients.indexOf(ingredient);
-    let ingredientdiv = document.getElementById(ingredient);
-    if (index > -1) {
-        selectedingredients.splice(index, 1);
-    }
-    ingredientdiv.remove();
+    selectedingredients.splice(index, 1);
     console.log(selectedingredients);
+    updateingredients();
 }
 
 window.onload = async function () {
@@ -213,24 +210,27 @@ async function detectobjects() {
     let imghtml = document.getElementById("imghtml");
 
     let file = uploadedimage.files[0];
-    imghtml.src = URL.createObjectURL(file);
+    let url = URL.createObjectURL(file);
+    imghtml.src = url;
 
     imghtml.onload = async function () {
-        let threshold = 0.0;
+        let threshold = 0.7;
 
         let predictions = await model.classify(imghtml);
-        console.log(predictions)
+        console.log(predictions);
         predictions = predictions.filter(predicition => predicition.probability >= threshold);
-        console.log(predictions)
+        console.log(predictions);
         let predictionsfiltered = predictions.filter((prediction) => {
             return data2.some(ingredient => ingredient.toLowerCase() === prediction.className.toLowerCase());
         }).map(prediction => prediction.className);
+        console(predictionsfiltered);
 
         predictionsfiltered.forEach(ingredient => {
             if (!selectedingredients.includes(ingredient)) {
                 selectedingredients.push(ingredient);
             }
         });
-        updateingredients()
+        updateingredients();
+        URL.revokeObjectURL(url);
     };
 }
