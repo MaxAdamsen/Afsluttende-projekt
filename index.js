@@ -223,7 +223,7 @@ async function detectobjects() {
         let predictionsfiltered = predictions.filter((prediction) => {
             return data2.some(ingredient => ingredient.toLowerCase() === prediction.className.toLowerCase());
         }).map(prediction => prediction.className);
-        console(predictionsfiltered);
+        console.log(predictionsfiltered);
 
         predictionsfiltered.forEach(ingredient => {
             if (!selectedingredients.includes(ingredient)) {
