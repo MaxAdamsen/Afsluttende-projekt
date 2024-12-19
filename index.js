@@ -6,7 +6,7 @@ let resultlist = document.getElementById("resultlist");
 
 async function fetchData_rec() {
     try {
-        const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/varer.json");
+        const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/Bilag%20(JSON-filer)/varer.json");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -20,7 +20,7 @@ fetchData_rec();
 //--------------------------------------------------------------------------Bilag----------------------------------------------------------------------------------------//
 async function fetchData_ing() {
     try {
-        const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/ingredients.json");
+        const response = await fetch("https://raw.githubusercontent.com/MaxAdamsen/Afsluttende-projekt/refs/heads/main/Bilag%20(JSON-filer)/ingredients.json");
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
